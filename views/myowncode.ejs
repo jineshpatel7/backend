@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/main.css">
+    <title>My own world capital quiz</title>
+</head >
+<body id="app">
+    <form action="/submit" method="post" class="container">
+        <div class="horizontal-container">
+            <h3>Total Score: 
+                <span class="score"><%= currentScore%></span>
+            </h3>
+        </div>
+        <h1 class="countryName"> <%=quiz.country%> </h1>
+        <div class="answer-container">
+            <input type="text" id="userInput" name="answer" placeholder="Enter the capital" autofocus autocomplete="off">
+        </div>
+        <button type="submit" value="Submit" >
+            Submit
+            <span class="checkmark">✔</span>
+            <span class="cross" id="error">✖</span>
+        </button>
+
+    </form>
+    <script>
+        if(locals.incorrect == false){
+            alert("Game Over")
+        }
+    </script>
+</body>
+</html>
